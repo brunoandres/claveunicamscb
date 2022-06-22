@@ -1,0 +1,40 @@
+<div class="container">
+    <mat-card>
+        <h3>Complete el siguiente formulario para solicitar su clave única municipal</h3>
+        <form class="example-form" [formGroup]="form">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Nombre</mat-label>
+                <input formControlName="nombre" matInput placeholder="Nombre" autocomplete="off" [class.is-invalid]="nombre">
+                <small *ngIf="nombre" class="text-danger">Ingrese su nombre</small>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Apellido</mat-label>
+                <input formControlName="apellido" matInput placeholder="Apellido" autocomplete="off" [class.is-invalid]="apellido">
+                <small *ngIf="apellido" class="text-danger">Ingrese su apellido</small>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>DNI</mat-label>
+                <input formControlName="dni" matInput placeholder="DNI" autocomplete="off" [class.is-invalid]="dni">
+                <small *ngIf="dni" class="text-danger">Ingrese su DNI</small>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Nro. Trámite</mat-label>
+                <input formControlName="nroTramite" matInput placeholder="Nro. Trámite" autocomplete="off" [class.is-invalid]="nroTramite">
+                <small *ngIf="nroTramite || form.controls['nroTramite'].errors?.['pattern']" class="text-danger">Ingrese el nro de Trámite de su DNI, sólo números permitidos (11)</small><br>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput formControlName="email" [class.is-invalid]="email"
+                    placeholder="Ex. joseperez@example.com" autocomplete="off"><br>
+                <mat-hint>Ingrese un correo electrónico válido!</mat-hint>
+                <small *ngIf="email" class="text-danger">Ingrese un correo electrónico</small>
+            </mat-form-field>
+            <br><br>
+            <button type="submit" [disabled]="!form.valid" mat-flat-button color="primary">Enviar Solicitud</button>
+        </form>
+    </mat-card>
+</div>
