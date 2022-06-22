@@ -1,7 +1,12 @@
 <div class="container">
     <mat-card>
         <h3>Complete el siguiente formulario para solicitar su clave única municipal</h3>
-        <form class="example-form" [formGroup]="form">
+        <br>
+        <div *ngIf="msg" [class]="class" role="alert">
+            {{msg}}
+        </div>
+        <mat-spinner *ngIf="load"></mat-spinner>
+        <form class="example-form" [formGroup]="form" (ngSubmit)="solicitarClave()">
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Nombre</mat-label>
                 <input formControlName="nombre" matInput placeholder="Nombre" autocomplete="off" [class.is-invalid]="nombre">

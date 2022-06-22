@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 import { NuevaSolicitudComponent } from './componentes/nueva-solicitud/nueva-solicitud.component';
 
 @NgModule({
@@ -19,6 +20,7 @@ import { NuevaSolicitudComponent } from './componentes/nueva-solicitud/nueva-sol
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
